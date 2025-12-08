@@ -1,0 +1,223 @@
+/* Galaxie Basket - Modern Dark Theme with Golden Accents */
+
+/* Override Flex default colors with dark grey background */
+body {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%) !important;
+    background-attachment: fixed;
+    color: #e0e0e0 !important;
+}
+
+/* Subtle golden overlay effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(238, 209, 117, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(238, 209, 117, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Navigation styling */
+.navbar, #menu, nav {
+    background: rgba(30, 30, 30, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #eed175 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.navbar-brand, .site-name a {
+    color: #eed175 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-link, nav a, #menu a {
+    color: #e0e0e0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, nav a:hover, #menu a:hover {
+    color: #eed175 !important;
+    transform: translateY(-2px);
+    background: rgba(238, 209, 117, 0.1) !important;
+}
+
+/* Content cards with glassmorphism */
+article, .post, .page, section {
+    background: rgba(45, 45, 45, 0.9) !important;
+    border-radius: 15px;
+    border: 1px solid rgba(238, 209, 117, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+article:hover, .post:hover {
+    box-shadow: 0 0 20px rgba(238, 209, 117, 0.6);
+    transform: translateY(-5px);
+}
+
+/* Headers with golden color */
+h1, h2, h3, h4, h5, h6 {
+    color: #eed175 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #eed175, #47daed);
+    border-radius: 2px;
+}
+
+/* Alternating blue accents for variety */
+article:nth-child(even) h2::after {
+    background: linear-gradient(90deg, #47daed, #38c5d9);
+}
+
+/* Buttons with golden gradient */
+.btn, button, input[type="submit"] {
+    background: linear-gradient(45deg, #eed175, #e6d45a) !important;
+    border: none !important;
+    border-radius: 25px;
+    color: #1a1a1a !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(238, 209, 117, 0.3);
+    cursor: pointer;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(238, 209, 117, 0.4);
+    background: linear-gradient(45deg, #e6d45a, #dcc83f) !important;
+    color: #1a1a1a !important;
+}
+
+/* Links */
+a {
+    color: #eed175 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #e6d45a !important;
+    text-shadow: 0 0 10px rgba(238, 209, 117, 0.5);
+}
+
+/* Sidebar styling */
+aside, .sidebar {
+    background: rgba(35, 35, 35, 0.9) !important;
+    border-radius: 15px;
+    border: 1px solid rgba(238, 209, 117, 0.2);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 100%) !important;
+    border-top: 2px solid #eed175 !important;
+    color: #b0b0b0 !important;
+}
+
+/* Text improvements */
+p, span, div {
+    color: #d0d0d0;
+    line-height: 1.7;
+}
+
+/* Images */
+img {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+/* Stats/Score styling */
+.stats, .score-box {
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border: 2px solid #eed175;
+    border-radius: 10px;
+    color: #eed175;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(238, 209, 117, 0.3);
+    margin: 0.5rem 0;
+}
+
+/* Pulse animation */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(238, 209, 117, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(238, 209, 117, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(238, 209, 117, 0);
+    }
+}
+
+.btn, button {
+    animation: pulse-gold 2s infinite;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body::before {
+        display: none; /* Remove overlay on mobile for performance */
+    }
+    
+    article, .post, .page, section {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    h1::after, h2::after {
+        width: 30px;
+        height: 2px;
+    }
+    
+    .btn, button {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    article, .post, .page, section {
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+}

@@ -91,6 +91,8 @@
   <link rel="stylesheet" type="text/css" href="{% if main_siteurl is defined %}{{ main_site }}{% else %}{{ SITEURL }}{% endif %}/{{ CUSTOM_CSS }}">
   {% endif %}
 
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/basketball-theme.css">
+
   {% include "partial/icon.html" %}
 
   {% include "partial/color.html" %}
@@ -185,5 +187,7 @@
   {% include 'partial/cf_analytics.html' %}
 
   {% block additional_js %}{% endblock %}
+
+  <script src="{{ SITEURL }}/theme/js/basketball-effects.js"></script>
 </body>
 </html>
