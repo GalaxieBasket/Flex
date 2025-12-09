@@ -1,10 +1,58 @@
 /* Galaxie Basket - Modern Dark Theme with Golden Accents */
 
-/* Override Flex default colors with dark grey background */
+/* ========================================
+   MASQUER COMPLÈTEMENT LA SIDEBAR DE GAUCHE
+   ======================================== */
+
+/* Masquer TOUS les éléments de sidebar possibles */
+aside,
+#sidebar,
+.sidebar,
+[class*="sidebar"],
+[id*="sidebar"],
+.aside,
+aside[role="complementary"] {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Structure de page sans sidebar */
 body {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%) !important;
     background-attachment: fixed;
     color: #e0e0e0 !important;
+}
+
+/* Wrapper principal */
+#wrapper,
+.wrapper,
+.site-wrapper,
+.page-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Contenu prend toute la largeur */
+#content,
+main,
+.main,
+.main-content,
+.content-wrapper {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Subtle golden overlay effect */
@@ -22,34 +70,127 @@ body::before {
     z-index: -1;
 }
 
-/* Navigation styling */
-.navbar, #menu, nav {
+/* ========================================
+   NAVIGATION HORIZONTALE EN HAUT
+   ======================================== */
+
+/* Navbar en haut sticky */
+.navbar, #menu, nav, header nav {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
     background: rgba(30, 30, 30, 0.95) !important;
     backdrop-filter: blur(10px);
     border-bottom: 2px solid #eed175 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+    padding: 1rem 0 !important;
 }
 
-.navbar-brand, .site-name a {
+/* Container de navigation centré */
+nav > div,
+nav .container,
+.nav-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 2rem !important;
+}
+
+/* Logo/Brand */
+.navbar-brand, 
+.site-name a,
+nav h1,
+nav h1 a {
     color: #eed175 !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
-.nav-link, nav a, #menu a {
+/* Logo dans la navigation */
+.navbar-logo {
+    width: 200px !important;
+    height: 100px !important;
+    object-fit: cover !important;
+    margin-right: 10px !important;
+}
+
+/* Container du brand (logo + titre) */
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+}
+
+.navbar-brand span {
+    color: #eed175 !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+.navbar-brand:hover {
+    background: none !important;
+    transform: none !important;
+}
+
+.navbar-brand:hover span {
+    color: #e6d45a !important;
+}
+
+/* Menu horizontal */
+nav ul,
+#menu ul {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    gap: 2rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+}
+
+nav li,
+#menu li {
+    display: inline-block !important;
+    margin: 0 !important;
+}
+
+/* Liens de navigation */
+.nav-link, 
+nav a, 
+#menu a {
     color: #e0e0e0 !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 5px !important;
 }
 
-.nav-link:hover, nav a:hover, #menu a:hover {
+.nav-link:hover, 
+nav a:hover, 
+#menu a:hover {
     color: #eed175 !important;
-    transform: translateY(-2px);
+    transform: translateY(-2px) !important;
     background: rgba(238, 209, 117, 0.1) !important;
 }
+
+/* ========================================
+   CONTENU PRINCIPAL
+   ======================================== */
 
 /* Content cards with glassmorphism */
 article, .post, .page, section {
@@ -73,9 +214,9 @@ article:hover, .post:hover {
 /* Headers with golden color */
 h1, h2, h3, h4, h5, h6 {
     color: #eed175 !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
     position: relative;
 }
 
@@ -101,9 +242,9 @@ article:nth-child(even) h2::after {
     border: none !important;
     border-radius: 25px;
     color: #1a1a1a !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
     padding: 12px 30px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(238, 209, 117, 0.3);
@@ -129,20 +270,34 @@ a:hover {
     text-shadow: 0 0 10px rgba(238, 209, 117, 0.5);
 }
 
-/* Sidebar styling */
-aside, .sidebar {
-    background: rgba(35, 35, 35, 0.9) !important;
-    border-radius: 15px;
-    border: 1px solid rgba(238, 209, 117, 0.2);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-}
+/* ========================================
+   FOOTER FULL WIDTH
+   ======================================== */
 
-/* Footer */
+/* Footer - Full width like navbar */
 footer {
     background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 100%) !important;
     border-top: 2px solid #eed175 !important;
     color: #b0b0b0 !important;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+}
+
+/* Footer content centered */
+footer > div,
+footer .container,
+footer .content,
+footer p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Text improvements */
@@ -193,10 +348,44 @@ img:hover {
     animation: pulse-gold 2s infinite;
 }
 
-/* Mobile responsiveness */
+/* ========================================
+   RESPONSIVE MOBILE
+   ======================================== */
+
 @media (max-width: 768px) {
     body::before {
         display: none; /* Remove overlay on mobile for performance */
+    }
+    
+    /* Navigation mobile */
+    nav > div,
+    nav .container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    nav ul,
+    #menu ul {
+        flex-direction: column !important;
+        width: 100% !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .nav-link,
+    nav a,
+    #menu a {
+        width: 100% !important;
+        padding: 0.8rem !important;
+        display: block !important;
+    }
+    
+    /* Contenu mobile */
+    #content,
+    main,
+    .main-content {
+        padding: 1rem !important;
     }
     
     article, .post, .page, section {
@@ -213,11 +402,37 @@ img:hover {
         padding: 15px 25px;
         font-size: 14px;
     }
+    
+    .navbar-brand,
+    nav h1 {
+        font-size: 1.4rem !important;
+    }
+    
+    .navbar-logo {
+        width: 200px !important;
+        height: 100px !important;
+    }
 }
 
 @media (max-width: 480px) {
     article, .post, .page, section {
         padding: 1.2rem;
         border-radius: 12px;
+    }
+    
+    .navbar-brand,
+    nav h1 {
+        font-size: 1.2rem !important;
+        letter-spacing: 1px !important;
+    }
+    
+    nav > div,
+    nav .container {
+        padding: 0.8rem !important;
+    }
+    
+    .navbar-logo {
+        width: 200px !important;
+        height: 100px !important;
     }
 }

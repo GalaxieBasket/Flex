@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo et titre du site -->
+        <a href="{{ SITEURL }}/" class="navbar-brand">
+            {% if SITELOGO %}
+            <img src="{{ SITELOGO }}" alt="{{ SITENAME }}" class="navbar-logo">
+            {% endif %}
+            <!-- span>{{ SITENAME }}</span>-->
+        </a>
+        
+        <!-- Menu de navigation -->
+        <ul class="nav-links">
+            {% for title, link in MENUITEMS %}
+                <li><a href="{{ link }}" class="nav-link">{{ title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

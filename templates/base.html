@@ -157,7 +157,7 @@
 <body {% if not THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}class="{{ THEME_COLOR|default('light') }}-theme"{% endif %}>
   {% include "partial/gtm_noscript.html" %}
 
-  {% include "partial/sidebar.html" %}
+  {% include "partial/navbar.html" %}
 
   <main>
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
@@ -174,9 +174,9 @@
 
     {% block content %}
     {% endblock %}
-
-    {% include "partial/footer.html" %}
   </main>
+
+  {% include "partial/footer.html" %}
 
   {% include "partial/jsonld.html" %}
   {% include "partial/guages.html" %}
