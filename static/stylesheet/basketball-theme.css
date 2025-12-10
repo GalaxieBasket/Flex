@@ -225,7 +225,7 @@ h1::after, h2::after {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 50px;
+    width: 200px;
     height: 3px;
     background: linear-gradient(90deg, #eed175, #47daed);
     border-radius: 2px;
