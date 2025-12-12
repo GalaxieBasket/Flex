@@ -1,5 +1,10 @@
 /* Galaxie Basket - Modern Dark Theme with Golden Accents */
 
+/* override style.min.css */
+html {
+    height: auto !important;
+}
+
 /* ========================================
    MASQUER COMPLÈTEMENT LA SIDEBAR DE GAUCHE
    ======================================== */
@@ -22,11 +27,13 @@ aside[role="complementary"] {
 body {
     display: flex !important;
     flex-direction: column !important;
+    min-height: 100vh !important;
     margin: 0 !important;
     padding: 0 !important;
     background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%) !important;
     background-attachment: fixed;
     color: #e0e0e0 !important;
+    height: auto !important;
 }
 
 /* Wrapper principal */
@@ -47,12 +54,19 @@ main,
 .main,
 .main-content,
 .content-wrapper {
+    flex: 1 0 auto !important;
+    height: auto !important; /* Override height:100vh */
+    position: static !important; /* Override position:relative */
+    padding-left: 0 !important; /* Override padding-left:25vw since no sidebar */
     width: 100% !important;
     max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 2rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    padding: 2rem !important;
+}
+
+main article {
+    width: 100%;
 }
 
 /* Subtle golden overlay effect */
@@ -276,18 +290,13 @@ a:hover {
 
 /* Footer - Full width like navbar */
 footer {
+    flex-shrink: 0 !important;
     background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 100%) !important;
     border-top: 2px solid #eed175 !important;
     color: #b0b0b0 !important;
     text-align: center;
     padding: 2rem;
-    margin-top: 3rem;
-    width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+    width: 100% !important;
 }
 
 /* Footer content centered */
